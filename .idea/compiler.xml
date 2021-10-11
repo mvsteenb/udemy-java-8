@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="udemy-java-8" target="16" />
+      <module name="udemy-java-8" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
