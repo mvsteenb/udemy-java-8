@@ -7,11 +7,12 @@ public class StreamMapReduceExample {
 
 	private static int noOfNoteBooks() {
 		int noOfNoteBooks = StudentDatabase.getAllStudents().stream()   // Stream<Student>
-			.map(Student::getNoteBooks)             // Stream<Integer>
-			//.reduce(0, (a,b) -> a+b);
+				.filter(student -> student.getGradeLevel() >= 3)
+				.filter(student -> student.getGender().equals("female"))
+				.map(Student::getNoteBooks)                                   // Stream<Integer>
+				//.reduce(0, (a,b) -> a+b);
 				.reduce(0, Integer::sum);
 		return noOfNoteBooks;
-
 	}
 
 	public static void main(String[] args) {
