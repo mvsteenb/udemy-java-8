@@ -44,6 +44,9 @@ public class PredicateStudentExample {
 			if (p1.and(p2).test(s)) {
 				System.out.println(s);
 			}
+			else {
+				System.out.println(s);
+			}
 		});
 	}
 
