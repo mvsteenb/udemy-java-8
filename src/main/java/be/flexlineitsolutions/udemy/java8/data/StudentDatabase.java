@@ -2,12 +2,18 @@ package be.flexlineitsolutions.udemy.java8.data;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 public class StudentDatabase {
 
 	public static Supplier<Student> studentSupplier = () -> {
-		return new Student("Adam",2,3.6, "male", Arrays.asList("swimming", "basketball","volleyball"), 14);
+		Bike bike = new Bike();
+		bike.setName("ABC");
+		bike.setModel("XYZ");
+		Student student = new Student("Adam",2,3.6, "male", Arrays.asList("swimming", "basketball","volleyball"), 14);
+		student.setBike(Optional.ofNullable(bike));
+		return student;
 	};
 
 	/**
@@ -32,7 +38,7 @@ public class StudentDatabase {
 		Student student5 = new Student("Sophia",4,3.5,"female", Arrays.asList("swimming", "dancing","football"), 11);
 		Student student6 = new Student("James",4,3.9,"male", Arrays.asList("swimming", "basketball","baseball","football"), 21);
 
-		List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6);
+		List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6, null);
 		return students;
 	}
 
